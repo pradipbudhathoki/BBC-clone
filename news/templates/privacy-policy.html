@@ -1,0 +1,79 @@
+{% extends 'manager.html' %}
+
+{% block content %}
+
+<div class="row" style="background: #005487;height: 60px">
+    <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-1" style="color: white">
+            <h3><b>Using the BBC</b></h3>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="background: #007BC7; height: 40px">
+    <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-1" style="color: white">
+            <h3><b>Your Information & Privacy</b></h3>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="background: #007BC7;color: white">
+    <hr>
+    <div class="col-md-12">
+
+        <div class="col-md-6 col-md-offset-1">
+            <h2 style="font-size: 43px"><b>Keeping your info safe & sound</b></h2>
+            <div style="font-size: 16px">
+                <p> We take your privacy very seriously. And so should you.</p>
+                <p>So have a look around to see what we’re doing with your personal information and how we’re keeping it
+                    secure.</p>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-md-offset-2">
+            <span class="glyphicon glyphicon-lock" aria-hidden="true" style="font-size: 170px"></span>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="background: #F3F3F3; height: 350px">
+    <div class="col-md-12">
+        <br><br>
+        <div class="col-md-9 col-md-offset-1" style="background: white">
+            <br>
+            <span class="glyphicon glyphicon-user" aria-hidden="true"
+                  style="font-size: 30px;float: left; color: black"></span>
+            &ensp;&ensp;
+            <a href="{% url 'generic' %}" style="color:black;font-size: 20px"><b>Personal Information<br> <br> </b></a>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-12">
+        <br>
+        <div class="col-md-9 col-md-offset-1" style="background: white">
+            <br>
+            <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"
+                  style="font-size: 30px;float: left; color: black"></span>
+            &ensp;&ensp;
+            <a href="{% url 'login' %}" style="color:black;font-size: 20px"><b> Privacy and Your Activity <br> <br> </b></a>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <br>
+        <div class="col-md-9 col-md-offset-1" style="background: white">
+            <br>
+            <span class="glyphicon glyphicon-baby-formula" aria-hidden="true"
+                  style="font-size: 30px;float: left; color: black"></span>
+            &ensp;&ensp;
+            <a href="{% url 'about' %}" style="color:black;font-size: 20px"><b> Children and Safety <br> <br> </b></a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

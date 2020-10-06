@@ -1,0 +1,21 @@
+{% extends 'manager.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="row">
+    <div class="col-md-12">
+
+        <h1><b>&ensp; Welcome {{user.get_username }}</b></h1>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            &ensp;&ensp;&ensp;&ensp;
+            <button class="btn btn-danger btn-sm">Logout</button>
+            <br><br>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'manager.html' %}
+
+{% block content %}
+
+{% include 'welcome.html' %}
+
+<div class="row">
+    <div class="col-md-12">
+        <form action="" method="post">
+            {% csrf_token %}
+            <h3>{{BlogData}}</h3>
+            <h4>Are you sure?</h4>
+            <button type="submit" class="btn btn-danger">Delete</button>
+
+        </form>
+        <br>
+    </div>
+</div>
+
+{% endblock %}

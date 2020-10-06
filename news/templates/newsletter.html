@@ -1,0 +1,46 @@
+{% extends 'manager.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="row" style="background: #F3F3EE">
+    <div class="col-md-12">
+        <div class="col-md-6 col-md-offset-1">
+            <h1 style="color: #404040;font-size: 48px"><b>NEWSLETTER</b></h1>
+            <br>
+            <h2 style="color: black; font-size: 33px"><b>Emails made for you</b></h2>
+            <div style="color: gray; font-size: 20px">
+                <p>
+                    Every week we send a round-up of the latest shows, services and experiences from across the BBC in
+                    our
+                    'Discover more with the BBC' email updates. Plus, if we spot anything extra we think you'll love,
+                    we'll
+                    let you know about that too.
+                </p>
+                <p>
+                    Simply sign up today and don't worry – you can unsubscribe from these emails at any time.
+                </p>
+            </div>
+            <br>
+            <div onmouseover="this.style.background='#D3D3CF'" onmouseout="this.style.background='#F3F3EE' "
+                 style="padding: 20px">
+                <button class="btn btn-success btn-lg"
+                        style="background: #006DEF; border: 0; border-radius: 0;width: 200px;height: 60px ;font-size: 22px">
+                    <b>Get the latest</b>
+                </button>
+                &ensp;
+                <a href="{% url 'login' %}" style="color: black;font-size: 18px">
+                    <b>Sign up for personalised emails</b>
+                </a>
+            </div>
+            <br><br>
+        </div>
+        <div class="col-md-4 col-md-offset-1">
+            <br><br><br><br>
+            <img src="{% static 'images/cup-coffee.jpg' %}" alt="" style="width: 400px; transform: rotate(355deg)">
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,113 @@
+{% load static %}
+
+<div class="row">
+
+    <nav class="navbar-inverse navbar-default">
+        <div class="container-fluid">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header" style="height:55px; border-right: 1px solid gray">
+
+
+                <a class="navbar-brand" href="{% url 'Homepage' %}">
+
+                    <img src="{% static 'images/BBC_logo_black_background.png' %}"
+                         style="width:97px; padding-top:0; margin-left: 100px">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"
+                 style="font-family: Calibri; font-size: 18px;">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'login' %}" style="height:55px; color: white; border-right: 1px solid gray "
+                           onmouseover="this.style.borderBottom='7px solid #1188BB'"
+                           onmouseout=" this.style.borderBottom=0">
+
+                        <span class="glyphicon glyphicon-user " aria-hidden="true"></span>
+                        Sign in
+                        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                    </a></li>
+
+                    <li><a href="{% url 'BBC-news' %}" style="height:55px; color: white; border-right: 1px solid gray "
+                           onmouseover="this.style.borderBottom='7px solid #BB1919'"
+                           onmouseout=" this.style.borderBottom=0">News</a></li>
+
+                    <li><a href="{% url 'BBC-sports' %}" style="height:55px; color: white; border-right: 1px solid gray"
+                           onmouseover="this.style.borderBottom='7px solid #FFD230'"
+                           onmouseout=" this.style.borderBottom=0">Sport</a></li>
+
+                    <li><a href="{% url 'BBC-reel' %}" style="height:55px; color: white; border-right: 1px solid gray"
+                           onmouseover="this.style.borderBottom='7px solid #1188BB'"
+                           onmouseout=" this.style.borderBottom=0">Reel</a></li>
+
+                    <li><a href="{% url 'BBC-worklife' %}"
+                           style="height:55px; color: white; border-right: 1px solid gray"
+                           onmouseover="this.style.borderBottom='7px solid #1188BB'"
+                           onmouseout=" this.style.borderBottom=0">Worklife</a></li>
+
+                    <li><a href="{% url 'BBC-travel' %}" style="height:55px; color: white; border-right: 1px solid gray"
+                           onmouseover="this.style.borderBottom='7px solid #589E50'"
+                           onmouseout=" this.style.borderBottom=0">Travel</a></li>
+
+                    <li><a href="{% url 'BBC-future' %}" style="height:55px; color: white; border-right: 1px solid gray"
+                           onmouseover="this.style.borderBottom='7px solid purple'"
+                           onmouseout=" this.style.borderBottom=0">Future</a></li>
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true"
+                           aria-expanded="false" style="height:55px; color: white;border-right: 1px solid gray"
+                           onmouseover="this.style.borderBottom='7px solid #FFFFFF'"
+                           onmouseout=" this.style.borderBottom=0">More
+                            &ensp;&ensp;&ensp;&ensp;&ensp;<span
+                                    class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'BBC-culture' %}" style="color: black"
+                                   onmouseover="this.style.background='#4C4C4C'"
+                                   onmouseout="this.style.background='white'">Culture</a></li>
+
+                            <li><a href="{% url 'BBC-music' %}" style="color: black"
+                                   onmouseover="this.style.background='#4C4C4C'"
+                                   onmouseout="this.style.background='white'">Music</a></li>
+
+                            <li><a href="{% url 'BBC-tv' %}" style="color: black"
+                                   onmouseover="this.style.background='#4C4C4C'"
+                                   onmouseout="this.style.background='white'">TV</a></li>
+
+                            <li><a href="{% url 'BBC-weather' %}" style="color: black"
+                                   onmouseover="this.style.background='#4C4C4C'"
+                                   onmouseout="this.style.background='white'">Weather</a></li>
+
+                            <li><a href="{% url 'BBC-sound' %}" style="color: black"
+                                   onmouseover="this.style.background='#4C4C4C'"
+                                   onmouseout="this.style.background='white'">Sounds</a></li>
+
+                            <li role="separator" class="divider"></li>
+                            <li><a href="{% url 'generic' %}" style="color: black"
+                                   onmouseover="this.style.background='#4C4C4C'"
+                                   onmouseout="this.style.background='white'">Generic View</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="col-lg-push-1">
+                    <div class="input-group" style="padding-top: 9px; padding-left: 20px">
+                        <input type="text" class="form-control" placeholder="Search"
+                               style="border-radius: 0; border: none">
+                        <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"
+                                        style="border-radius: 0; border: 1px solid white">
+                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                </button>
+                            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+

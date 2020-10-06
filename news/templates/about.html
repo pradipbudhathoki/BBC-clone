@@ -1,0 +1,99 @@
+{% extends 'manager.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="row" style="background: #275680;height: 85px">
+    <br>
+    <div class="col-md-12">
+        <div class="col-md-4 col-md-offset-1" style="color: white;font-size: 35px">
+
+            <b>About the BBC </b>
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <img src="{% static 'images/bbcwall.jpg' %}" alt="" width="100%" height="300px">
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-1" style="color: #4C4C4C">
+            <br><br>
+            <div style="font-size: 30px">
+                <b>The BBC is the world’s leading public service broadcaster</b>
+            </div>
+
+            <div style="font-size: 18px">
+                <p>We’re impartial and independent, and every day we create distinctive, world-class programmes and
+                    content
+                    which inform, educate and entertain millions of people in the UK and around the world.</p>
+                <p>We do this across:</p>
+
+                <li>
+                    A portfolio of television services, including the UK’s most-watched channel BBC One, the
+                    pioneering
+                    online-only youth service BBC Three, and our multi award-winning channels for children, as well
+                    as
+                    national and regional television programmes and services across England. Northern Ireland,
+                    Scotland
+                    and Wales
+                </li>
+                <li>Ten UK-wide radio networks, providing the best live music broadcasting in the UK, as well as
+                    speech
+                    radio which informs, educates and entertains. We also have two national radio services each in
+                    Scotland, Wales and Northern Ireland and 39 local radio stations across England and the Channel
+                    Islands, providing an invaluable and unique service to listeners across the UK
+                </li>
+                <li>Our digital services including BBC News, Sport, Weather CBBC and CBeebies, iPlayer and BBC
+                    Sounds,
+                    BBC Red Button and our vast archive
+                </li>
+                <li><b>BBC World Service</b> television, radio and online on more than 40 languages</li>
+
+                <p>Established by a <b>Royal Charter</b>, the BBC is principally funded through the <b>licence fee</b>
+                    paid by UK
+                    households. Our role is to <b>fulfil our mission and promote our Public Purposes</b>.</p>
+                <p><b>Our commercial operations</b> including BBC Studios, the BBC’s award-winning production company
+                    and
+                    world-class distributor, provide additional revenue for investment in new programming and services
+                    for
+                    UK audiences.</p>
+                <p><b>The BBC’s Board</b> ensures that we deliver our mission and public purposes which are set out in
+                    the
+                    Charter.
+                    <b>The Executive Committee</b> is responsible for day-to-day management. We are regulated by <b>Ofcom</b>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-10 col-md-offset-1">
+            <hr style="border-top: 1px solid black ">
+            <div style="color: black;font-size: 35px">
+                <b>Audience feedback</b>
+            </div>
+            <br>
+            <div>
+                <span class="glyphicon glyphicon-envelope" aria-hidden="true"
+                      style="font-size: 30px; color: #1b6d85;float: left"></span>
+                &ensp;&ensp;
+                <a href="{% url 'contact' %}"
+                   style="font-size: 18px; color: black; text-decoration: none"
+                   onmouseover="this.style.color='#1b6d85'" onmouseout="this.style.color='black'">Submit feedback on BBC
+                    programme</a>
+
+            </div>
+            <br><br><br><br>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

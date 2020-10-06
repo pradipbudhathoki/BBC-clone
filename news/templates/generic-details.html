@@ -1,0 +1,30 @@
+{% extends 'manager.html' %}
+
+{% block content %}
+
+{% include 'manager/welcome.html' %}
+
+<div class="row" style="padding-left: 15px">
+    <div class="col-md-12">
+        <h1>{{BlogDetails.title}}</h1>
+        <br>
+        <img src="{{BlogDetails.image.url}}" alt="" width="350px">
+        <br>
+        <br>
+        <p>{{BlogDetails.description|safe}}</p>
+        <br>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-offset-11 col-md-1">
+            <a href="{% url 'generic-delete' BlogDetails.pk %}">Delete</a>
+            &ensp;
+            <a href="{% url 'generic-edit' BlogDetails.pk %}">Edit</a>
+
+        </div>
+        <br>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'manager.html' %}
+
+{% block content %}
+
+<div class="row" style="background: #005487;height: 60px">
+    <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-1" style="color: white">
+            <h3><b>Using the BBC</b></h3>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="background: #007BC7;height: 68px ">
+    <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-1" style="color: white">
+            <h3><b>
+                <div>Cookies & Browser</div>
+                <div>Settings</div>
+            </b></h3>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="background: #007BC7;color: white">
+    <hr>
+    <div class="col-md-12">
+
+        <div class="col-md-6 col-md-offset-1">
+            <h2 style="font-size: 43px"><b>Take control of your cookies</b></h2>
+            <div style="font-size: 16px">
+                <p> Cookies help us remember you and show you more things we think you’ll like.</p>
+                <p>Have a browse to see what we use them for and how you can change your settings to suit you. </p>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-md-offset-2">
+            <span class="glyphicon glyphicon-info-sign" aria-hidden="true" style="font-size: 150px"></span>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="background: #F3F3F3; height: 260px">
+    <div class="col-md-12">
+        <br><br>
+        <div class="col-md-9 col-md-offset-1" style="background: white">
+            <br>
+            <span class="glyphicon glyphicon-th-list" aria-hidden="true"
+                  style="font-size: 30px;float: left; color: black"></span>
+            &ensp;&ensp;
+            <a href="{% url 'generic' %}" style="color:black;font-size: 20px"><b> About Cookies <br> <br> </b></a>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-md-12">
+        <br>
+        <div class="col-md-9 col-md-offset-1" style="background: white">
+            <br>
+            <span class="glyphicon glyphicon-cog" aria-hidden="true"
+                  style="font-size: 30px;float: left; color: black"></span>
+            &ensp;&ensp;
+            <a href="{% url 'about' %}" style="color:black;font-size: 20px"><b> Cookies Settings <br> <br> </b></a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

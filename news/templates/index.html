@@ -1,0 +1,182 @@
+{% extends 'manager.html' %}
+
+
+{% block content %}
+
+{% include 'manager/welcome.html' %}
+
+<!--Begin News Section-->
+<div class="row">
+    <div class="col-md-12" style=" background: white">
+        <div style="padding-left: 20px">
+            <h3 style="border-left: 5px solid #BB1919;font-size: 30px">
+                &ensp;
+                <a href="{% url 'BBC-news' %}" style="color: #4C4C4C; text-decoration: none"
+                   onmouseover="this.style.color='black'" onmouseout="this.style.color='#4c4c4c'">
+                    <b>News</b>
+                </a>
+            </h3>
+        </div>
+
+        {% for Blog in BlogData %}
+        {% if Blog.main_set.all %}
+        {% if Blog.name == "news" %}
+
+        {% for blog in Blog.main_set.all %}
+        <div class=" col-md-4">
+            <div class="thumbnail" style="height: 440px; border: 0 " >
+                <img src="{{blog.image.url}}" alt="...">
+                <div class="caption">
+                    <h3>{{blog.title}}</h3>
+                    <p>{{blog.slug}}</p>
+                    <p style="float: right">
+                        <a href="{% url 'detail' blog.slug %}" style="color: #4C4C4C;text-decoration: none; font-size: 16px"
+                           onmouseover="this.style.color='black'"
+                           onmouseout="this.style.color='#4C4C4C'">
+                            <b>Read more...</b>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+<!--End News Section-->
+
+<!--Begin Sport Section-->
+<div class="row">
+    <div class="col-md-12" style=" background: white">
+        <div style="padding-left: 20px">
+            <h3 style="border-left: 5px solid #FFD230;font-size: 30px">
+                &ensp;
+                <a href="{% url 'BBC-sports' %}" style="color: #4C4C4C; text-decoration: none"
+                   onmouseover="this.style.color='black'" onmouseout="this.style.color='#4c4c4c'">
+                    <b>Sport</b>
+                </a>
+            </h3>
+        </div>
+
+        {% for Blog in BlogData %}
+        {% if Blog.main_set.all %}
+        {% if Blog.name == "sport" %}
+
+        {% for blog in Blog.main_set.all %}
+        <div class=" col-md-4">
+            <div class="thumbnail" style="height: 440px; border: 0">
+                <img src="{{blog.image.url}}" alt="...">
+                <div class="caption">
+                    <h3>{{blog.title}}</h3>
+                    <p>{{blog.slug}}</p>
+                    <p style="float: right">
+                        <a href="{% url 'detail' blog.slug %}" style="color: #4C4C4C;text-decoration: none; font-size: 16px"
+                           onmouseover="this.style.color='black'"
+                           onmouseout="this.style.color='#4C4C4C'">
+                            <b>Read more...</b>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+<!--End Sport Section-->
+
+<!--Begin Reel Section-->
+<div class="row">
+    <div class="col-md-12" style=" background: white">
+        <div style="padding-left: 20px">
+            <h3 style="border-left: 5px solid #1188BB;font-size: 30px">
+                &ensp;
+                <a href="{% url 'BBC-reel' %}" style="color: #4C4C4C; text-decoration: none"
+                   onmouseover="this.style.color='black'" onmouseout="this.style.color='#4c4c4c'">
+                    <b>Reel</b>
+                </a>
+            </h3>
+        </div>
+
+        {% for Blog in BlogData %}
+        {% if Blog.main_set.all %}
+        {% if Blog.name == "reel" %}
+
+        {% for blog in Blog.main_set.all %}
+        <div class=" col-md-4">
+            <div class="thumbnail" style="height: 440px; border: 0">
+                <img src="{{blog.image.url}}" alt="...">
+                <div class="caption">
+                    <h3>{{blog.title}}</h3>
+                    <p>{{blog.slug}}</p>
+                    <p style="float: right">
+                        <a href="{% url 'detail' blog.slug %}" style="color: #4C4C4C;text-decoration: none; font-size: 16px"
+                           onmouseover="this.style.color='black'"
+                           onmouseout="this.style.color='#4C4C4C'">
+                            <b>Read more...</b>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+<!--End Reel Section-->
+
+
+<!--Begin Worklife Section-->
+<div class="row">
+    <div class="col-md-12" style=" background: white">
+        <div style="padding-left: 20px">
+            <h3 style="border-left: 5px solid #1188BB;font-size: 30px">
+                &ensp;
+                <a href="{% url 'BBC-worklife' %}" style="color: #4C4C4C; text-decoration: none"
+                   onmouseover="this.style.color='black'" onmouseout="this.style.color='#4c4c4c'">
+                    <b>Worklife</b>
+                </a>
+            </h3>
+        </div>
+
+        {% for Blog in BlogData %}
+        {% if Blog.main_set.all %}
+        {% if Blog.name == "worklife" %}
+
+        {% for blog in Blog.main_set.all %}
+        <div class=" col-md-4">
+            <div class="thumbnail" style="height: 440px; border: 0" >
+                <img src="{{blog.image.url}}" alt="...">
+                <div class="caption">
+                    <h3>{{blog.title}}</h3>
+                    <p>{{blog.slug}}</p>
+                    <p style="float: right">
+                        <a href="{% url 'detail' blog.slug %}" style="color: #4C4C4C;text-decoration: none; font-size: 16px"
+                           onmouseover="this.style.color='black'"
+                           onmouseout="this.style.color='#4C4C4C'">
+                            <b>Read more...</b>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+<!--End Worklife Section-->
+
+
+{% endblock %}

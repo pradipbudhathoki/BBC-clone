@@ -1,0 +1,82 @@
+{% extends 'manager.html' %}
+
+{% block content %}
+
+<div class="row" style="background: #005487;height: 60px">
+    <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-1" style="color: white">
+            <h3><b>Using the BBC</b></h3>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="background: #007BC7; height: 40px">
+    <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-1" style="color: white">
+            <h3><b>Terms of Use</b></h3>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="background: #007BC7;color: white">
+    <hr>
+    <div class="col-md-12">
+
+        <div class="col-md-6 col-md-offset-1">
+            <h2 style="font-size: 43px"><b>A few rules for us and you</b></h2>
+            <div style="font-size: 16px">
+                <p> We want everyone to enjoy the BBC. But there are a few rules to stick to.</p>
+                <p>Take a look through our explainers to see what you (and we) can and can’t do. Our explainers cover
+                    questions we often get asked. Can’t find what you’re after? Take a look at the full version of the
+                    Terms
+                    of Use.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-md-offset-2">
+            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 170px"></span>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="background: #F3F3F3; height: 350px">
+    <div class="col-md-12">
+        <br><br>
+        <div class="col-md-9 col-md-offset-1" style="background: white">
+            <br>
+            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"
+                  style="font-size: 30px;float: left; color: black"></span>
+            &ensp;&ensp;
+            <a href="{% url 'generic' %}" style="color:black;font-size: 20px"><b>Accessing the BBC <br> <br> </b></a>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-12">
+        <br>
+        <div class="col-md-9 col-md-offset-1" style="background: white">
+            <br>
+            <span class="glyphicon glyphicon-comment" aria-hidden="true"
+                  style="font-size: 30px;float: left; color: black"></span>
+            &ensp;&ensp;
+            <a href="{% url 'login' %}" style="color:black;font-size: 20px"><b> Joining in <br> <br> </b></a>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <br>
+        <div class="col-md-9 col-md-offset-1" style="background: white">
+            <br>
+            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"
+                  style="font-size: 30px;float: left; color: black"></span>
+            &ensp;&ensp;
+            <a href="{% url 'about' %}" style="color:black;font-size: 20px"><b> Using BBC Content <br> <br> </b></a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

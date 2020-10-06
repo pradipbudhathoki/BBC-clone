@@ -1,0 +1,32 @@
+{% extends 'manager.html' %}
+
+{% block content %}
+
+{% include 'manager/welcome.html' %}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-12">
+            <div class="col-md-12">
+
+                {% for blog in BlogDetails %}
+                <h3><a href=''>{{blog.title}}</a></h3>
+                <a href="" style="float: left"> Created at {{blog.created_at}}</a>
+
+                <a href="" class="btn btn-success btn-xs" style="float: right"> Views {{blog.page_visit}} </a>
+                <hr>
+                <img src="{{blog.image.url}}" style="width:90%">
+                <p>
+                    <br><br>
+                    {{blog.description|safe}}
+                    <br>
+                </p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+{% endblock %}

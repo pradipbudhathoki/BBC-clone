@@ -1,0 +1,246 @@
+ Django
+
+-Install Python
+-Install django
+-< djangoproject.com >
+-pip = prefered installer program
+
+-django installation process
+-1) < pip install django > (default 2.2.7)
+-2) < pip install django==3.0 > (latest version 3.0)
+
+-from github
+<git clone https://github.com/django/django.git>
+
+-check version
+<python -m django --version>
+
+-Create Project
+<django-admin startproject django7am>
+
+manage.py = command-line utility
+asgi.py = asynchronous server getway interface
+setting.py = configuration 
+urls.py = Uniform Resorce Locator
+wsgi.py = web server getway interface
+
+>>terminal
+
+python manage.py runserver
+
+Ctrl+c : to break server
+
+>> python manage.py startapp news (new project)
+
+
+>>
+django concept
+mtv= model template views
+
+>>process:
+>> news/apps >> (class name)
+
+>> django7am/setting.py >> INSTALLED_APPS= ['news.apps.NewsConfig']
+
+>> django7am/urls.py >> path,include  
+			urlpatterns = [ path('',include('news.urls')) ]
+
+>> news/urls.py >> from django.urls import path
+		from . import views
+		urlpatterns = [ path('',views.index)]
+>> news/views.py >> from django.http import HttpResponse
+		def index(request):
+			return HttpResponse("<h1>Welcome </h1>") 
+
+>> add about page:
+>> news/urls.py >>
+		urlpatterns = [ path('about',views.about)]
+
+>> news/views.py >> from django.http import HttpResponse
+		def about(request):
+			return HttpResponse("<h1>About Page </h1>") 
+
+
+"""Templates"""
+
+>>create templates directory in news.
+
+>>django7am/settings >> TEMPLATES =['DIRS':['templates']]
+
+>>create html file in templates
+
+>> views >> def index(request):
+		return render(request, 'index.html')
+
+"""dynamic coding"""
+>> master.html
+{% block content%}
+{% endblock %}
+
+>> index.html
+{% extends 'master.html' %}
+{% block content %}
+<h1></h1>
+<p></p>
+{% endblock %}
+
+"""another process"""
+>> header.html
+head section
+
+>> footer.html
+footer section
+
+>> master.html
+{% include 'header.html'}
+.
+.
+.
+{% include 'footer.html'}
+
+
+"""upload static image"""
+
+>> django/setting>>
+
+STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+>> django/urls >>
+from django.conf  import settings
+from django.conf.urls.static import static
+
+urlpatterns = [] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+>> news/static/css/custom.css
+
+"""bootstrap"""
+>> upload bootstrap inside static
+
+>> header.html
+<!doctype html>
+{% load static %}
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+
+
+href= "{% url 'home' %}"
+
+<title>
+{% if title %}
+Django : : {{title}}
+{%  else %}
+Django : : Welcome
+{% endif %}
+</title>
+
+
+---Download SQLite studio---
+
+"""Migration"""
+>> python manage.py migrate
+
+"""login to database"""
+>> python manage.py createsuperuser
+
+"""Change the content of database"""
+>> django7am/urls >>
+>> admin.site.site_header = 'Django7am'
+>> admin.site.site_title = 'Admin'
+>> admin.site.index_title = 'Django7'
+
+"""OR create your own login"""
+>> templates/admin/login.html
+>> static/admin/login.css
+
+"""add tables in database"""
+"""django models"""
+>> news/models.py >>
+>> from django.db import models
+
+class Blog(models.Model):
+    created_at = models.DateField()
+    status = models.BooleanField(default=0)
+    title = models.CharField(max_length=200, unique=True)
+    image = models.ImageField(upload_to='blog')
+    description = models.TextField()
+    
+
+>> py manage.py makemigrations
+>> py manage.py migrate
+
+>> register into news/admin.py
+>> from .models import Blog
+>> admin.site.register(Blog)
+>> add blogs
+
+"""rename name to the blogs"""
+>>news/models.py
+>> inside class
+def __str__(self):
+	return self.title
+
+
+>> fetch in frontend
+>> news/urls {create blog}
+>> news/views
+>> from .models import Blog
+
+def blog(request):
+    data = {
+        'title': 'blog',
+	'BlogData': Blog.objects.all()
+    }
+    return render(request, 'blog.html', data)
+
+>> template >>add blog in nav 
+>> create blog.html
+{% extends 'master.html' %}
+{% block content %}
+{% for blog in BlogData %}
+<h3><a href=''>{{blog.title}}</a></h3>
+<a href=""> Created at {{blog.created_at}}</a>
+<hr> 
+<img src="{{blog.image.url}}" style="width:200px">
+<p> 
+{{blog.description}}
+ </p>
+{% endfor %}
+{% endblock %}
+
+
+		"""models"""
+
+>> news/admin.py
+instead of >> admin.site.register(Blog)
+use>>
+from django.utilities.html import format_html  (to display images)
+
+@admin.register(Blog)
+class AdminBlog(admin.ModelAdmin):
+	list_display = ['title','show_image','status']
+	search_fields = ['title','status']
+	actions = ['update_status_active','update_status_inactive']
+	list_per_page = 5
+	ordering = ['title']
+	date_hierarchy = 'created_at'
+
+	def show_image(self):
+		return format_html('<img src="{}" width="40px">', format(object.image.url))
+
+	show_image.short_description='image'
+	
+
+	def update_status_active(self, request , queryset):
+		queryset.update(status=True)
+
+		
+
+	def update_status_deactive(self, request , queryset):
+		queryset.update(status=False)
+
+	
+
+>> news/models.py
+
+

@@ -1,0 +1,80 @@
+{% extends 'manager.html' %}
+
+{% block content %}
+
+<div class="row" style="background: #005487;height: 60px">
+    <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-1" style="color: white">
+            <h3><b>Using the BBC</b></h3>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="background: #007BC7">
+    <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-1" style="color: white">
+            <h3><b>
+                <div>Cookies & Browser</div>
+                <div>Settings</div>
+            </b></h3>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="background: #F3F3F3; color: gray">
+    <div class="col-md-12">
+        <div class="col-md-10 col-md-offset-1" style="font-size: 18px">
+
+            <h2 style="color: black"><b>Read Carefully</b></h2>
+
+            <p>
+                The BBC shows advertising on its website and apps to users outside the UK. We use the income to help
+                fund BBC services, including making these services available to international audiences.
+            </p>
+            <p>We try our best, using sophisticated technology, to make sure that the advertising is only visible to
+                people outside the UK, but if you are viewing the website from the UK and you can see advertising,
+                <a href="{% url 'contact' %}" style="color: #006DEF"><b>please use this form</b></a> to let us know.
+            </p>
+            <p>
+                If you've seen what you believe to be inappropriate advertising on our online services,
+                <a href="{% url 'about' %}" style="color: #006DEF"><b>
+                    please read this.</b></a>
+            </p>
+            <p>
+                If you are in the UK and using the Licence Fee funded website and apps, these services do not contain
+                advertising and your data will not be used for advertising purposes.</p>
+            <p>
+
+                If you are using our services outside the UK, or you are using another commercially funded BBC website
+                or app, the ads you see may be personalised based on information that has been inferred about you and
+                your interests. Personalising ads helps us to show you fewer, more relevant ads. It also means we can
+                receive more revenue from our advertisers, allowing us to invest more in great content.
+            </p>
+            <p>
+                We will also show you ads relevant to the content you viewing. For example if you are reading an article
+                about travel then we might show you ads for airlines. This is called contextual advertising.
+            </p>
+            <p>
+                The personalisation of ads may be based on information, referred to as “data”, collected about your use
+                of our services (e.g. what articles you read) and other data attributed to you by the advertiser or a
+                data specialist – such as your interests, age, gender and similar statistical characteristics
+                (demographics) inferred from your internet browsing or marketing data that an advertiser holds about
+                you. We may also use your general location to show you ads relevant to where you are, so if you are in
+                the US you will see ads from US advertisers.
+            </p>
+            <p>
+                To create an ad profile for personalisation, unique identifiers (IDs) are used to tell your device apart
+                from others – such as an ID stored by a cookie, or your Mobile Ad ID (a unique code set by your mobile
+                operating system). You can opt-out from these IDs being used for ad personalisation; advice on how to do
+                this is provided below.
+            </p>
+            <p>
+                Data that directly identifies you, such as your name, email address or mobile number, will not be used
+                for advertising purposes in your browser or app settings.
+            </p>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
