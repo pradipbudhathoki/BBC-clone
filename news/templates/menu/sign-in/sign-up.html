@@ -24,11 +24,12 @@
             </ul>
             {% endif%}
 
-            <form action="" method="post">
+            <form action="" method="POST">
                 {% csrf_token %}
                 {{form|crispy}}
                 <button class="btn btn-success btn-sm" style="background: #006DEF; width: 410px">Sign up</button>
-                <br><br>
+                <br>
+                <br>
             </form>
 
         </div>

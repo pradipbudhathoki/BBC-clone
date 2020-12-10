@@ -17,7 +17,14 @@
             <img src="{% static 'images/bbc2.png' %}" alt="" style="width: 85px; margin-bottom: 0">
             <div style="color: black; font-size: 40px"><b>Sign in</b></div>
             <br><br><br>
-            <form action="" method="post">
+            {% if messages %}
+            <ul>
+                {% for message in messages%}
+                <li class="alert alert-danger">{{message}}</li>
+                {% endfor %}
+            </ul>
+            {% endif%}
+            <form action="" method="POST">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <button class="btn btn-success" style="background: #006DEF; width: 410px">Sign in</button>

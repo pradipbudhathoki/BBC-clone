@@ -20,8 +20,9 @@ def login(request):
             auth_log(request, user)
             return redirect('users')
         else:
+            messages.error(request,'Incorrect Username or Password')
             back_page = request.META.get('HTTP_REFERER')
-            return HttpResponse(back_page)
+            return redirect(back_page)
     else:
         data = {
             'title': 'Login',
@@ -54,8 +55,10 @@ def sign_up(request):
             return redirect(back_page)
 
         else:
+            messages.error(request,'Please, check your username and password!')
+            messages.warning(request,'Failed to register')
             back_page = request.META.get('HTTP_REFERER')
-            return HttpResponse(back_page)
+            return redirect(back_page)
     else:
         data = {
             'title': 'Sign-up',
@@ -71,8 +74,6 @@ def index(request):
         'BlogData': Category.objects.prefetch_related('main_set').all()
     }
     return render(request, 'index.html', data)
-
-
 
 
 def contact(request):
