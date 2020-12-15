@@ -20,7 +20,7 @@ def login(request):
             auth_log(request, user)
             return redirect('users')
         else:
-            messages.error(request,'Incorrect Username or Password')
+            messages.error(request, 'Incorrect Username or Password')
             back_page = request.META.get('HTTP_REFERER')
             return redirect(back_page)
     else:
@@ -55,8 +55,8 @@ def sign_up(request):
             return redirect(back_page)
 
         else:
-            messages.error(request,'Please, check your username and password!')
-            messages.warning(request,'Failed to register')
+            messages.error(request, 'Please, check your username and password!')
+            messages.warning(request, 'Failed to register')
             back_page = request.META.get('HTTP_REFERER')
             return redirect(back_page)
     else:
