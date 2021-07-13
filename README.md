@@ -24,7 +24,6 @@ Then install the dependencies:
 Once `pip` has finished downloading the dependencies:
 
 ```sh
-(env)$ cd project
 (env)$ python manage.py runserver
 ```
 
