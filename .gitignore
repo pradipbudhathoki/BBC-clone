@@ -1,5 +1,5 @@
 .DS_Store
-.vscode
+/.vscode
 .idea
-.idea 2
-env/
+/.idea 2
+/env
