@@ -1,12 +1,12 @@
-## BBC-clone
+## BBC-clone-Django
 
 ## Setup
 
 The first thing to do is to clone the repository:
 
 ```sh
-$ git clone https://github.com/pradipbudhathoki/BBC-clone.git
-$ cd BBC-clone
+$ git clone https://github.com/pradipbudhathoki/BBC-clone-Django.git
+$ cd BBC-clone-Django
 ```
 
 Create a virtual environment to install dependencies in and activate it:
